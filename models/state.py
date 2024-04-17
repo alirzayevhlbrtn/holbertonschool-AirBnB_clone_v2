@@ -20,6 +20,6 @@ class State(BaseModel, Base):
             objects = storage.all(City)
             cities = []
             for i in objects:
-                if State.id == objects[i].state_id:
+                if self.id == objects[i].state_id:
                     cities.append(objects[i])
             return cities
