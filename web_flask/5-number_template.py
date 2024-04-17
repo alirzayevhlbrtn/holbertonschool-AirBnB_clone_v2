@@ -36,13 +36,13 @@ def display_text_p(text="is cool"):
     return f"Python {txt}"
 
 
-@app.route("/number/<int:n>")
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """display number"""
     return f"{n} is a number"
 
 
-@app.route("/number_template/<int:n>")
+@app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
     """display number"""
     return render_template("5-number.html", n=n)
