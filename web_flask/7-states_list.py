@@ -14,7 +14,7 @@ def states_list():
     """code goes here"""
     states = storage.all("State").values()
     s_states = sorted(states, key=lambda x: x.name)
-    return render_template("7-states_list.html", st=s_states)
+    return render_template("7-states_list.html", states=s_states)
 
 
 @app.teardown_appcontext
