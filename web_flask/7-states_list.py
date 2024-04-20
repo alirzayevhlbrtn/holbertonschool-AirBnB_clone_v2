@@ -3,7 +3,7 @@
 script for storage
 """
 from flask import Flask
-from Flask import render_template
+from flask import render_template
 from models import storage
 
 app = Flask(__name__)
