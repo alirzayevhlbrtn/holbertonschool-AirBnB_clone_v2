@@ -2,9 +2,9 @@
 """
 Script that starts a Flask web application:
 """
-from models import storage
-from flask import Flask
-from flask import render_template
+from models.__init__ import storage
+from models.state import State
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def states_list():
     """
     States are sorted by name.
     """
-    states = storage.all("State").values()
+    states = storage.all(State).values()
     sorted_states = sorted(states, key=lambda x: x.name)
     return render_template("7-states_list.html", states=sorted_states)
 
